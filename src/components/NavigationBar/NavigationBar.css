@@ -1,0 +1,12 @@
+.navigation-bar {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: white;
+  background-color: #2ca58d;
+  margin-bottom: 32px;
+}
+
+.navigation-bar h3 {
+  padding: 8px 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+}

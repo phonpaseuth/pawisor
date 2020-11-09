@@ -1,0 +1,24 @@
+.hero__image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+.hero__text h1 {
+  margin-bottom: 0px;
+  color: #2ca58d;
+}
+
+.hero__text p {
+  margin-top: 8px;
+}
+
+@media (min-width: 525px) {
+  .hero__image img {
+    width: 33%;
+  }
+  .hero__text {
+    text-align: center;
+  }
+}
