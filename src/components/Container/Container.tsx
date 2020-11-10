@@ -1,13 +1,15 @@
 import React from "react";
+import clsx from "clsx";
 import "./Container.css";
 
 type ContainerProps = {
-  children: any;
+  className?: string;
+  children?: any;
 };
 
 function Container(props: ContainerProps) {
-  const { children } = props;
-  return <div className="container">{children}</div>;
+  const { className, children } = props;
+  return <div className={clsx("container", className)}>{children}</div>;
 }
 
 export default Container;
