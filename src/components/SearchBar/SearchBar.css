@@ -1,0 +1,72 @@
+.search-bar {
+  width: fit-content;
+}
+
+.search-bar__label {
+  position: relative;
+}
+
+.search-bar__label-text {
+  display: none;
+}
+
+.search-bar__label-input {
+  padding: 12px 68px 12px 12px;
+  background-color: #eff3f6;
+  border: none;
+}
+
+.search-bar__label-input:focus {
+  outline: none;
+}
+
+/* Icons */
+
+.search-bar__icons-container {
+  position: absolute;
+  top: 0;
+  right: 12px;
+}
+
+.search-bar__label-icon--delete img {
+  width: 12px;
+  height: 12px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.search-bar__label-icon--search img {
+  width: 12px;
+  height: 12px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.search-bar__label-icon--delete,
+.search-bar__label-icon--pipe {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.search-bar__label-icon--delete--hide,
+.search-bar__label-icon--pipe--hide {
+  opacity: 0;
+  display: none;
+}
+
+.search-bar__fail-search {
+  font-size: 12px;
+  font-style: italic;
+  color: #982020;
+  padding-left: 12px;
+  margin-top: 1px;
+  position: absolute;
+}
+
+.search-bar__fail-search i {
+  text-decoration: underline;
+}
+
+.search-bar__fail-search--hidden {
+  display: none;
+}

@@ -6,6 +6,8 @@ import RegisterNewDogModal from "../components/Modal/RegisterNewDogModal/Registe
 import DeleteConfirmationModal from "../components/Modal/DeleteConfirmationModal/DeleteConfirmationModal";
 import Button from "../components/Button/Button";
 import Hero from "../components/Hero/Hero";
+import SearchBar from "../components/SearchBar/SearchBar";
+import PlusIcon from "../assets/icons/plus.svg";
 import "./Home.css";
 
 function Home() {
@@ -19,10 +21,10 @@ function Home() {
     boolean
   >(false);
   let [selectedDog, setSelectedDog] = useState<DogsType | undefined>(undefined);
+  let [showSearchError, setShowSearchError] = useState<boolean>(false);
 
   // Save data to local storage on first run
   if (data.length === 0) {
-    console.log("Saving to local storage");
     setData(Dogs);
     localStorage.setItem("dogsData", JSON.stringify(Dogs));
   }
@@ -39,7 +41,10 @@ function Home() {
   }
 
   function handleDeleteDog() {
-    const index = data.findIndex(
+    const realData: DogsType[] = JSON.parse(
+      localStorage.getItem("dogsData") || "[]"
+    );
+    const index = realData.findIndex(
       (d) =>
         d.name === selectedDog?.name &&
         d.breed === selectedDog.breed &&
@@ -47,19 +52,53 @@ function Home() {
         d.size === selectedDog.size &&
         d.description === selectedDog.description
     );
-    data.splice(index, 1);
-    localStorage.setItem("dogsData", JSON.stringify(data));
+    realData.splice(index, 1);
+    localStorage.setItem("dogsData", JSON.stringify(realData));
+    setData(realData);
+    setShowSearchError(false);
     setShowDeleteConfirmationModal(false);
+  }
+
+  function handleSearchDog(searchedText: string) {
+    if (searchedText === "") {
+      setData(JSON.parse(localStorage.getItem("dogsData") || "[]"));
+      setShowSearchError(false);
+    } else {
+      const result = data.filter((d) => d.name.toLowerCase() === searchedText);
+
+      if (result.length !== 0) {
+        setData(result);
+        setShowSearchError(false);
+      } else {
+        setShowSearchError(true);
+      }
+    }
+  }
+
+  // Remove alert message when a user starts typing
+  function removeSearchFailMessageOnTyping() {
+    setShowSearchError(false);
   }
 
   return (
     <Container className="home">
       <Hero />
       <h2 className="home__title">Meet our most trusted advisors</h2>
-      <Button
-        label="Recommend an advisor"
-        onClick={() => setShowRegisterDogModal(true)}
-      />
+
+      <div className="home__action-bar-container">
+        <SearchBar
+          onSearch={handleSearchDog}
+          showError={showSearchError}
+          removeError={removeSearchFailMessageOnTyping}
+        />
+        <Button
+          className="home__add-a-dog-button"
+          label="Add a dog"
+          onClick={() => setShowRegisterDogModal(true)}
+        >
+          <img src={PlusIcon} alt="plus" />
+        </Button>
+      </div>
 
       <div className="home__dogs-container">
         {data
