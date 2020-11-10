@@ -2,9 +2,32 @@
   margin-bottom: 8px;
 }
 
+.home__action-bar-container {
+  display: flex;
+}
+
+/* Add button */
+
+.home__add-a-dog-button {
+  background-color: transparent;
+  box-shadow: none;
+  margin-left: 8px;
+}
+
+.home__add-a-dog-button:hover {
+  box-shadow: none;
+  background-color: #eff3f6;
+}
+
+.home__add-a-dog-button img {
+  height: 12px;
+  width: 12px;
+  margin-right: 8px;
+}
+
 .home__dogs-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 12px auto;
+  justify-content: left;
+  margin: 24px auto;
 }

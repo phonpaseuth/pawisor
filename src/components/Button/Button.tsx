@@ -4,14 +4,16 @@ import "./Button.css";
 
 type ButtonProps = {
   label: string;
+  children?: any;
   className?: string;
   onClick?: () => void;
 };
 
 function Button(props: ButtonProps) {
-  const { label, className, onClick } = props;
+  const { label, children, className, onClick } = props;
   return (
     <button className={clsx("button", className)} onClick={onClick}>
+      {children}
       {label}
     </button>
   );
