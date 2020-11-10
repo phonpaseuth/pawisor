@@ -1,0 +1,87 @@
+/* Header */
+
+.register-new-dog-modal__header {
+  text-align: center;
+}
+
+.register-new-dog-modal__header img {
+  display: block;
+  margin: auto;
+  width: 150px;
+}
+
+.register-new-dog-modal__header h2 {
+  font-size: 20px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.register-new-dog-modal__header p {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* Form */
+
+.register-new-dog-modal__form {
+  margin-top: 12px;
+}
+
+.register-new-dog-modal__label {
+  display: block;
+}
+
+.register-new-dog-modal__label span {
+  font-size: 12px;
+}
+
+.register-new-dog-modal__label input,
+.register-new-dog-modal__label textarea {
+  display: block;
+  width: 93%;
+  max-width: 93%;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  padding: 6px 8px;
+  border: 0.5px solid#868484;
+}
+
+.register-new-dog-modal__label input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.register-new-dog-modal__label textarea {
+  min-height: 50px;
+  min-width: 93%;
+}
+
+.register-new-dog-modal__label select {
+  margin-left: 8px;
+  margin-bottom: 16px;
+}
+
+.register-new-dog-modal__submit-button {
+  margin-top: 32px;
+}
+
+/* Submit Button */
+.register-new-dog-modal__submit-button {
+  width: 100%;
+  padding: 8px 12px;
+}
+
+.register-new-dog-modal__submit-button--active {
+  background-color: #17a398;
+  color: white;
+
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.register-new-dog-modal__submit-button--active:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}

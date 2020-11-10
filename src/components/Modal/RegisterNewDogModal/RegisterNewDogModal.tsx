@@ -1,0 +1,125 @@
+import React, { useState } from "react";
+import clsx from "clsx";
+import Modal from "../Modal";
+import { DogsType } from "../../../data/Dogs";
+import CautiousDogGraphic from "../../../assets/graphics/undraw_cautious_dog.svg";
+import "./RegisterNewDogModal.css";
+
+type RegisterNewDogModalType = {
+  show: boolean;
+  onClose: () => void;
+  registerNewDog: (newDog: DogsType) => void;
+};
+
+function RegisterNewDogModal(props: RegisterNewDogModalType) {
+  const { show, onClose, registerNewDog } = props;
+  const [name, setName] = useState<string>("");
+  const [breed, setBreed] = useState<string>("");
+  const [owner, setOwner] = useState<string>("");
+  const [size, setSize] = useState<string>("XS");
+  const [description, setDescription] = useState<string>("");
+
+  function handleOnSubmit(e: any) {
+    e.preventDefault();
+    const newDog: DogsType = {
+      name: name,
+      breed: breed,
+      owner: owner,
+      size: size,
+      description: description,
+    };
+    registerNewDog(newDog);
+    handleClose();
+  }
+
+  function handleClose() {
+    setName("");
+    setBreed("");
+    setOwner("");
+    setSize("XS");
+    setDescription("");
+    onClose();
+  }
+
+  function shouldDisableButton() {
+    if (
+      name.length !== 0 &&
+      breed.length !== 0 &&
+      owner.length !== 0 &&
+      size.length !== 0 &&
+      description.length !== 0
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
+  return (
+    <Modal show={show} onClose={handleClose}>
+      <div className="register-new-dog-modal__header">
+        <img src={CautiousDogGraphic} alt="Cautious dog" />
+        <h2>Recommend an advisor</h2>
+        <p>We're always looking to add new members to our team!</p>
+        <p>Tell us a bit more about this friend.</p>
+      </div>
+
+      <form
+        className="register-new-dog-modal__form"
+        onSubmit={(e) => handleOnSubmit(e)}
+      >
+        <label className="register-new-dog-modal__label">
+          <span>Name</span>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <label className="register-new-dog-modal__label">
+          <span>Breed</span>
+          <input
+            type="text"
+            value={breed}
+            onChange={(e) => setBreed(e.target.value)}
+          />
+        </label>
+        <label className="register-new-dog-modal__label">
+          <span>Owner</span>
+          <input
+            type="text"
+            value={owner}
+            onChange={(e) => setOwner(e.target.value)}
+          />
+        </label>
+        <label className="register-new-dog-modal__label">
+          <span>Size</span>
+          <select value={size} onChange={(e) => setSize(e.target.value)}>
+            <option value="XS">XS</option>
+            <option value="SM">SM</option>
+            <option value="MD">MD</option>
+            <option value="LG">LG</option>
+            <option value="XL">XL</option>
+          </select>
+        </label>
+        <label className="register-new-dog-modal__label">
+          <span>Description</span>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
+        <input
+          className={clsx("register-new-dog-modal__submit-button", {
+            "register-new-dog-modal__submit-button--active": !shouldDisableButton(),
+          })}
+          type="submit"
+          value="RECOMMEND"
+          disabled={shouldDisableButton()}
+        />
+      </form>
+    </Modal>
+  );
+}
+
+export default RegisterNewDogModal;

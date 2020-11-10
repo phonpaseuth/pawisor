@@ -1,5 +1,5 @@
 import React from "react";
-import GoodDoggyGraphic from "../../assets/graphics/undraw_good_doggy.svg";
+import TeamSpiritGraphic from "../../assets/graphics/undraw_team_spirit.svg";
 import "./Hero.css";
 
 function Hero() {
@@ -10,7 +10,7 @@ function Hero() {
           <h1>Pawisor</h1>
           <p>Our friendliest and fluffiest financial advisors at Voyant</p>
         </div>
-        <img src={GoodDoggyGraphic} />
+        <img src={TeamSpiritGraphic} alt="Team spirit" />
       </div>
     </div>
   );
