@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/pawisor/static/css/main.5f1c7d90.chunk.css",
-    "main.js": "/pawisor/static/js/main.4d719428.chunk.js",
-    "main.js.map": "/pawisor/static/js/main.4d719428.chunk.js.map",
-    "runtime-main.js": "/pawisor/static/js/runtime-main.47603331.js",
-    "runtime-main.js.map": "/pawisor/static/js/runtime-main.47603331.js.map",
-    "static/js/2.e5822aa5.chunk.js": "/pawisor/static/js/2.e5822aa5.chunk.js",
-    "static/js/2.e5822aa5.chunk.js.map": "/pawisor/static/js/2.e5822aa5.chunk.js.map",
-    "static/js/3.25347d1c.chunk.js": "/pawisor/static/js/3.25347d1c.chunk.js",
-    "static/js/3.25347d1c.chunk.js.map": "/pawisor/static/js/3.25347d1c.chunk.js.map",
+    "main.css": "/pawisor/static/css/main.9f5e394d.chunk.css",
+    "main.js": "/pawisor/static/js/main.03c24c68.chunk.js",
+    "main.js.map": "/pawisor/static/js/main.03c24c68.chunk.js.map",
+    "runtime-main.js": "/pawisor/static/js/runtime-main.0fedccf7.js",
+    "runtime-main.js.map": "/pawisor/static/js/runtime-main.0fedccf7.js.map",
+    "static/js/2.4d0bc1d1.chunk.js": "/pawisor/static/js/2.4d0bc1d1.chunk.js",
+    "static/js/2.4d0bc1d1.chunk.js.map": "/pawisor/static/js/2.4d0bc1d1.chunk.js.map",
+    "static/js/3.35f42a55.chunk.js": "/pawisor/static/js/3.35f42a55.chunk.js",
+    "static/js/3.35f42a55.chunk.js.map": "/pawisor/static/js/3.35f42a55.chunk.js.map",
     "index.html": "/pawisor/index.html",
-    "static/css/main.5f1c7d90.chunk.css.map": "/pawisor/static/css/main.5f1c7d90.chunk.css.map",
-    "static/js/2.e5822aa5.chunk.js.LICENSE.txt": "/pawisor/static/js/2.e5822aa5.chunk.js.LICENSE.txt",
+    "static/css/main.9f5e394d.chunk.css.map": "/pawisor/static/css/main.9f5e394d.chunk.css.map",
+    "static/js/2.4d0bc1d1.chunk.js.LICENSE.txt": "/pawisor/static/js/2.4d0bc1d1.chunk.js.LICENSE.txt",
+    "static/media/cancel.da5c4222.svg": "/pawisor/static/media/cancel.da5c4222.svg",
     "static/media/circle-filled.0f92d32a.svg": "/pawisor/static/media/circle-filled.0f92d32a.svg",
+    "static/media/undraw_cautious_dog.49aa3fad.svg": "/pawisor/static/media/undraw_cautious_dog.49aa3fad.svg",
     "static/media/undraw_good_doggy.ca355259.svg": "/pawisor/static/media/undraw_good_doggy.ca355259.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.47603331.js",
-    "static/js/2.e5822aa5.chunk.js",
-    "static/css/main.5f1c7d90.chunk.css",
-    "static/js/main.4d719428.chunk.js"
+    "static/js/runtime-main.0fedccf7.js",
+    "static/js/2.4d0bc1d1.chunk.js",
+    "static/css/main.9f5e394d.chunk.css",
+    "static/js/main.03c24c68.chunk.js"
   ]
 }
