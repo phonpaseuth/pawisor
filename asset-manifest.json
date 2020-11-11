@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pawisor/static/css/main.3e3d7d79.chunk.css",
-    "main.js": "/pawisor/static/js/main.ad2abb57.chunk.js",
-    "main.js.map": "/pawisor/static/js/main.ad2abb57.chunk.js.map",
+    "main.js": "/pawisor/static/js/main.b5611317.chunk.js",
+    "main.js.map": "/pawisor/static/js/main.b5611317.chunk.js.map",
     "runtime-main.js": "/pawisor/static/js/runtime-main.50e3256c.js",
     "runtime-main.js.map": "/pawisor/static/js/runtime-main.50e3256c.js.map",
     "static/js/2.cb346f51.chunk.js": "/pawisor/static/js/2.cb346f51.chunk.js",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.50e3256c.js",
     "static/js/2.cb346f51.chunk.js",
     "static/css/main.3e3d7d79.chunk.css",
-    "static/js/main.ad2abb57.chunk.js"
+    "static/js/main.b5611317.chunk.js"
   ]
 }
