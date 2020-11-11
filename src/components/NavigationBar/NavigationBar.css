@@ -1,8 +1,10 @@
 .navigation-bar {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   color: white;
-  background-color: #2ca58d;
-  margin-bottom: 32px;
+  background-color: #17a398;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
 }
 
 .navigation-bar h3 {

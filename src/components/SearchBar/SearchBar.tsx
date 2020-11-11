@@ -44,7 +44,7 @@ function SearchBar(props: SearchBarProps) {
           type="text"
           value={text}
           onChange={handleChange}
-          placeholder="Search for dog"
+          placeholder="Search"
         />
 
         <div className="search-bar__icons-container">

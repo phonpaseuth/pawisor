@@ -17,6 +17,7 @@ function Home() {
   let [showRegisterDogModal, setShowRegisterDogModal] = useState<boolean>(
     false
   );
+  let [showEditDogModal, setShowEditDogModal] = useState<boolean>(false);
   let [showDeleteConfirmationModal, setShowDeleteConfirmationModal] = useState<
     boolean
   >(false);
@@ -33,6 +34,34 @@ function Home() {
     const updatedData = data.concat(newDog);
     setData(updatedData);
     localStorage.setItem("dogsData", JSON.stringify(updatedData));
+  }
+
+  function selectDogToEdit(dogToEdit: DogsType) {
+    setSelectedDog(dogToEdit);
+    setShowEditDogModal(true);
+  }
+
+  function handleEditDog(newDog: DogsType) {
+    const realData: DogsType[] = JSON.parse(
+      localStorage.getItem("dogsData") || "[]"
+    );
+    const index = realData.findIndex(
+      (d) =>
+        d.name === selectedDog?.name &&
+        d.breed === selectedDog.breed &&
+        d.owner === selectedDog.owner &&
+        d.size === selectedDog.size &&
+        d.description === selectedDog.description
+    );
+
+    realData[index].name = newDog.name;
+    realData[index].breed = newDog.breed;
+    realData[index].owner = newDog.owner;
+    realData[index].size = newDog.size;
+    realData[index].description = newDog.description;
+
+    localStorage.setItem("dogsData", JSON.stringify(realData));
+    setData(realData);
   }
 
   function selectDogToDelete(dogToDelete: DogsType) {
@@ -80,10 +109,25 @@ function Home() {
     setShowSearchError(false);
   }
 
+  function handleRegisterModalClose() {
+    setSelectedDog(undefined);
+    setShowRegisterDogModal(false);
+  }
+
+  function handleEditModalClose() {
+    setSelectedDog(undefined);
+    setShowEditDogModal(false);
+  }
+
+  function handleDeletedConfirmationModalClose() {
+    setSelectedDog(undefined);
+    setShowDeleteConfirmationModal(false);
+  }
+
   return (
     <Container className="home">
       <Hero />
-      <h2 className="home__title">Meet our most trusted advisors</h2>
+      <h2 className="home__title">Meet our fluffy advisors</h2>
 
       <div className="home__action-bar-container">
         <SearchBar
@@ -93,7 +137,7 @@ function Home() {
         />
         <Button
           className="home__add-a-dog-button"
-          label="Add a dog"
+          label="Register"
           onClick={() => setShowRegisterDogModal(true)}
         >
           <img src={PlusIcon} alt="plus" />
@@ -102,23 +146,35 @@ function Home() {
 
       <div className="home__dogs-container">
         {data
-          .sort((a, b) => a.name.localeCompare(b.name))
+          // .sort((a, b) => a.name.localeCompare(b.name))
           .map((d, key) => (
-            <DogCard key={key} dog={d} onDelete={selectDogToDelete} />
+            <DogCard
+              key={key}
+              dog={d}
+              onEdit={selectDogToEdit}
+              onDelete={selectDogToDelete}
+            />
           ))}
       </div>
 
       <RegisterNewDogModal
         show={showRegisterDogModal}
-        onClose={() => setShowRegisterDogModal(false)}
+        onClose={handleRegisterModalClose}
         registerNewDog={handleRegisterNewDog}
+      />
+
+      <RegisterNewDogModal
+        show={showEditDogModal}
+        onClose={handleEditModalClose}
+        dog={selectedDog}
+        updateCurrentDog={handleEditDog}
       />
 
       <DeleteConfirmationModal
         dog={selectedDog}
         show={showDeleteConfirmationModal}
         onDelete={handleDeleteDog}
-        onClose={() => setShowDeleteConfirmationModal(false)}
+        onClose={handleDeletedConfirmationModalClose}
       />
     </Container>
   );

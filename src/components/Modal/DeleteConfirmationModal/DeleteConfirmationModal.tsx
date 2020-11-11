@@ -19,15 +19,13 @@ function DeleteConfirmationModal(props: DeleteConfirmationModalProps) {
     <Modal show={show} onClose={onClose}>
       <div className="delete-confirmation-modal__header">
         <img src={SadDogGraphic} alt="Sad dog" />
-        <h2>
-          Remove <i>{dog?.name}</i>?
-        </h2>
+        <h2>Remove {dog?.name}?</h2>
         <p>This action cannot be reversed.</p>
       </div>
 
       <div className="delete-confirmation-modal__delete-button-container">
         <Button
-          label="Yes, I'm sure"
+          label="Confirm"
           className="delete-confirmation-modal__delete-button"
           onClick={onDelete}
         />

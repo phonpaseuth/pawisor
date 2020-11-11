@@ -6,11 +6,14 @@ function Hero() {
   return (
     <div className="hero">
       <div className="hero__image">
-        <div className="hero__text">
-          <h1>Pawisor</h1>
-          <p>Our friendliest and fluffiest financial advisors at Voyant</p>
-        </div>
         <img src={TeamSpiritGraphic} alt="Team spirit" />
+      </div>
+      <div className="hero__text">
+        <h1>Unlike any financial institution</h1>
+        <p>
+          Pawisor provides cuddly friends to help and support you on your
+          financial journey.
+        </p>
       </div>
     </div>
   );
