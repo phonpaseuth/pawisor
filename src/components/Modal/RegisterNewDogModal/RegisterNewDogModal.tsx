@@ -40,26 +40,19 @@ function RegisterNewDogModal(props: RegisterNewDogModalType) {
   function handleOnSubmit(e: any) {
     e.preventDefault();
     // Register new dog for register
+    const newDog: DogsType = {
+      name: name,
+      breed: breed,
+      owner: owner,
+      size: size,
+      description: description,
+    };
     if (registerNewDog) {
-      const newDog: DogsType = {
-        name: name,
-        breed: breed,
-        owner: owner,
-        size: size,
-        description: description,
-      };
       registerNewDog(newDog);
     }
 
     // Update the dog's profile if updating function is pass
     if (updateCurrentDog) {
-      const newDog: DogsType = {
-        name: name,
-        breed: breed,
-        owner: owner,
-        size: size,
-        description: description,
-      };
       updateCurrentDog(newDog);
     }
 

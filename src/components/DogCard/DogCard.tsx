@@ -14,16 +14,16 @@ type DogCardProps = {
 function DogCard(props: DogCardProps) {
   const { dog, onEdit, onDelete } = props;
 
+  // Stop triggering card click when the delete button is clicked
+  function handleDeleteClick(e: any) {
+    e.stopPropagation();
+    onDelete(dog);
+  }
+
   return (
-    <div className="dog-card">
+    <div className="dog-card" onClick={() => onEdit(dog)}>
       <div className="dog-card__actions-container">
-        <img
-          className="dog-card__edit-icon"
-          src={EditIcon}
-          alt="Edit"
-          onClick={() => onEdit(dog)}
-        />
-        <img src={DeleteIcon} alt="Delete" onClick={() => onDelete(dog)} />
+        <img src={DeleteIcon} alt="Delete" onClick={handleDeleteClick} />
       </div>
       <div className="dog-card__name">{dog.name}</div>
       <div className="dog-card__info">

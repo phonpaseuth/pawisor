@@ -124,6 +124,13 @@ function Home() {
     setShowDeleteConfirmationModal(false);
   }
 
+  // Disable body scrolling with active modals
+  if (showRegisterDogModal || showEditDogModal || showDeleteConfirmationModal) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
   return (
     <Container className="home">
       <Hero />
@@ -146,7 +153,7 @@ function Home() {
 
       <div className="home__dogs-container">
         {data
-          // .sort((a, b) => a.name.localeCompare(b.name))
+          .sort((a, b) => a.name.localeCompare(b.name))
           .map((d, key) => (
             <DogCard
               key={key}
