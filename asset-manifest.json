@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/pawisor/static/css/main.3e3d7d79.chunk.css",
-    "main.js": "/pawisor/static/js/main.b5611317.chunk.js",
-    "main.js.map": "/pawisor/static/js/main.b5611317.chunk.js.map",
+    "main.css": "/pawisor/static/css/main.37dd74e8.chunk.css",
+    "main.js": "/pawisor/static/js/main.d2a21b70.chunk.js",
+    "main.js.map": "/pawisor/static/js/main.d2a21b70.chunk.js.map",
     "runtime-main.js": "/pawisor/static/js/runtime-main.50e3256c.js",
     "runtime-main.js.map": "/pawisor/static/js/runtime-main.50e3256c.js.map",
     "static/js/2.cb346f51.chunk.js": "/pawisor/static/js/2.cb346f51.chunk.js",
@@ -10,12 +10,11 @@
     "static/js/3.232f7b57.chunk.js": "/pawisor/static/js/3.232f7b57.chunk.js",
     "static/js/3.232f7b57.chunk.js.map": "/pawisor/static/js/3.232f7b57.chunk.js.map",
     "index.html": "/pawisor/index.html",
-    "static/css/main.3e3d7d79.chunk.css.map": "/pawisor/static/css/main.3e3d7d79.chunk.css.map",
+    "static/css/main.37dd74e8.chunk.css.map": "/pawisor/static/css/main.37dd74e8.chunk.css.map",
     "static/js/2.cb346f51.chunk.js.LICENSE.txt": "/pawisor/static/js/2.cb346f51.chunk.js.LICENSE.txt",
     "static/media/cancel.da5c4222.svg": "/pawisor/static/media/cancel.da5c4222.svg",
     "static/media/circle-filled.0f92d32a.svg": "/pawisor/static/media/circle-filled.0f92d32a.svg",
     "static/media/delete.353fcdfd.svg": "/pawisor/static/media/delete.353fcdfd.svg",
-    "static/media/edit.3a016870.svg": "/pawisor/static/media/edit.3a016870.svg",
     "static/media/plus.19250efd.svg": "/pawisor/static/media/plus.19250efd.svg",
     "static/media/search.637db432.svg": "/pawisor/static/media/search.637db432.svg",
     "static/media/undraw_cautious_dog.49aa3fad.svg": "/pawisor/static/media/undraw_cautious_dog.49aa3fad.svg",
@@ -26,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.50e3256c.js",
     "static/js/2.cb346f51.chunk.js",
-    "static/css/main.3e3d7d79.chunk.css",
-    "static/js/main.b5611317.chunk.js"
+    "static/css/main.37dd74e8.chunk.css",
+    "static/js/main.d2a21b70.chunk.js"
   ]
 }
