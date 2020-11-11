@@ -17,6 +17,13 @@ function Modal(props: ModalType) {
     return null;
   }
 
+  // Disable body scrolling when a modal is opened
+  if (show) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
   return (
     <div className={clsx("modal", className)}>
       <div className="modal__content">
