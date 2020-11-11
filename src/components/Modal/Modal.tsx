@@ -13,15 +13,15 @@ type ModalType = {
 function Modal(props: ModalType) {
   const { show, onClose, className, children } = props;
 
-  if (!show) {
-    return null;
-  }
-
   // Disable body scrolling when a modal is opened
   if (show) {
     document.body.style.overflow = "hidden";
   } else {
     document.body.style.overflow = "auto";
+  }
+
+  if (!show) {
+    return null;
   }
 
   return (
