@@ -13,8 +13,8 @@
 .home__add-a-dog-button {
   background-color: transparent;
   box-shadow: none;
-  margin-left: 8px;
   font-family: "Poppins", sans-serif;
+  margin-top: 8px;
 }
 
 .home__add-a-dog-button:hover {
@@ -38,8 +38,15 @@
   .home__title {
     font-size: 25px;
   }
+}
+
+@media screen and (min-width: 600px) {
   .home__action-bar-container {
     display: flex;
+  }
+  .home__add-a-dog-button {
+    margin-left: 8px;
+    margin-top: 0px;
   }
 }
 

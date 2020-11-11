@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
 import clsx from "clsx";
-import Modal from "../Modal";
-import { DogsType } from "../../../data/Dogs";
+import React, { useEffect, useState } from "react";
 import CautiousDogGraphic from "../../../assets/graphics/undraw_cautious_dog.svg";
 import EditProfileGraphic from "../../../assets/graphics/undraw_loading.svg";
+import { DogsType } from "../../../data/Dogs";
+import Modal from "../Modal";
 import "./RegisterNewDogModal.css";
 
 type RegisterNewDogModalType = {

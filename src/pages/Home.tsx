@@ -8,21 +8,26 @@ import Button from "../components/Button/Button";
 import Hero from "../components/Hero/Hero";
 import SearchBar from "../components/SearchBar/SearchBar";
 import PlusIcon from "../assets/icons/plus.svg";
+import Filter from "../components/Filter/Filter";
 import "./Home.css";
 
 function Home() {
-  let [data, setData] = useState<DogsType[]>(
+  const [data, setData] = useState<DogsType[]>(
     JSON.parse(localStorage.getItem("dogsData") || "[]")
   );
-  let [showRegisterDogModal, setShowRegisterDogModal] = useState<boolean>(
+  const [showRegisterDogModal, setShowRegisterDogModal] = useState<boolean>(
     false
   );
-  let [showEditDogModal, setShowEditDogModal] = useState<boolean>(false);
-  let [showDeleteConfirmationModal, setShowDeleteConfirmationModal] = useState<
-    boolean
-  >(false);
-  let [selectedDog, setSelectedDog] = useState<DogsType | undefined>(undefined);
-  let [showSearchError, setShowSearchError] = useState<boolean>(false);
+  const [showEditDogModal, setShowEditDogModal] = useState<boolean>(false);
+  const [
+    showDeleteConfirmationModal,
+    setShowDeleteConfirmationModal,
+  ] = useState<boolean>(false);
+  const [selectedDog, setSelectedDog] = useState<DogsType | undefined>(
+    undefined
+  );
+  const [showSearchError, setShowSearchError] = useState<boolean>(false);
+  const [sortOption, setSortOption] = useState<string>("Ascending");
 
   // Save data to local storage on first run
   if (data.length === 0) {
@@ -124,6 +129,20 @@ function Home() {
     setShowDeleteConfirmationModal(false);
   }
 
+  function handleSortOptionSelect(option: string) {
+    if (option === "Ascending") {
+      setSortOption("Ascending");
+    } else {
+      setSortOption("Descending");
+    }
+  }
+
+  if (sortOption === "Ascending") {
+    data.sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    data.sort((a, b) => b.name.localeCompare(a.name));
+  }
+
   // Disable body scrolling with active modals
   if (showRegisterDogModal || showEditDogModal || showDeleteConfirmationModal) {
     document.body.style.overflow = "hidden";
@@ -142,6 +161,7 @@ function Home() {
           showError={showSearchError}
           removeError={removeSearchFailMessageOnTyping}
         />
+        <Filter sortOption={sortOption} onSelect={handleSortOptionSelect} />
         <Button
           className="home__add-a-dog-button"
           label="Register"
@@ -152,16 +172,14 @@ function Home() {
       </div>
 
       <div className="home__dogs-container">
-        {data
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((d, key) => (
-            <DogCard
-              key={key}
-              dog={d}
-              onEdit={selectDogToEdit}
-              onDelete={selectDogToDelete}
-            />
-          ))}
+        {data.map((d, key) => (
+          <DogCard
+            key={key + d.name}
+            dog={d}
+            onEdit={selectDogToEdit}
+            onDelete={selectDogToDelete}
+          />
+        ))}
       </div>
 
       <RegisterNewDogModal

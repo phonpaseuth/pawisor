@@ -2,7 +2,6 @@ import React from "react";
 import { DogsType } from "../../data/Dogs";
 import CircleFilledIcon from "../../assets/icons/circle-filled.svg";
 import DeleteIcon from "../../assets/icons/delete.svg";
-import EditIcon from "../../assets/icons/edit.svg";
 import "./DogCard.css";
 
 type DogCardProps = {

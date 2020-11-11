@@ -1,0 +1,28 @@
+.filter {
+  margin-top: 8px;
+}
+
+.filter__label {
+  display: none;
+}
+
+.filter select {
+  height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+}
+
+.filter select:hover,
+.filter select:focus {
+  background-color: #eff3f6;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .filter {
+    margin-left: 8px;
+    margin-top: 0px;
+  }
+}
