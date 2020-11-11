@@ -1,24 +1,58 @@
+/* Image */
+
+.hero {
+  padding-top: 24px;
+}
+
 .hero__image img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .hero__text h1 {
-  margin-bottom: 0px;
-  color: #2ca58d;
+  font-size: 40px;
+  margin-bottom: 16px;
 }
 
 .hero__text p {
-  margin-top: 8px;
+  font-size: 18px;
+  margin-top: 0;
+  max-width: 370px;
 }
 
-@media (min-width: 525px) {
-  .hero__image img {
-    width: 33%;
+.hero__button {
+  margin-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media screen and (min-width: 480px) {
+  .hero__text h1 {
+    font-size: 60px;
+    line-height: 1.1;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    flex-flow: row-reverse;
+  }
+
+  .hero__text h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .hero__text {
-    text-align: center;
+    align-self: center;
+  }
+  .hero__text h1 {
+    font-size: 60px;
+  }
+  .hero__text p {
+    font-size: 20px;
   }
 }

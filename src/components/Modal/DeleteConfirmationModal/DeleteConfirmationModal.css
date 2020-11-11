@@ -1,7 +1,3 @@
-.delete-confirmation-modal__header {
-  text-align: center;
-}
-
 .delete-confirmation-modal__header img {
   display: block;
   margin: auto;
@@ -16,22 +12,18 @@
 .delete-confirmation-modal__header p {
   font-size: 12px;
   margin-top: 4px;
-  font-style: italic;
 }
 
 .delete-confirmation-modal__header i {
   text-decoration: underline;
 }
 
-.delete-confirmation-modal__delete-button-container {
-  display: flex;
-  justify-content: center;
-}
-
 .delete-confirmation-modal__delete-button {
   margin-top: 32px;
   background-color: #982020;
   color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 .delete-confirmation-modal__delete-button:hover {

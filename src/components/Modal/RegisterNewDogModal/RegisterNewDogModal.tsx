@@ -1,34 +1,68 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import Modal from "../Modal";
 import { DogsType } from "../../../data/Dogs";
 import CautiousDogGraphic from "../../../assets/graphics/undraw_cautious_dog.svg";
+import EditProfileGraphic from "../../../assets/graphics/undraw_loading.svg";
 import "./RegisterNewDogModal.css";
 
 type RegisterNewDogModalType = {
   show: boolean;
   onClose: () => void;
-  registerNewDog: (newDog: DogsType) => void;
+  registerNewDog?: (newDog: DogsType) => void;
+  dog?: DogsType;
+  updateCurrentDog?: (newDog: DogsType) => void;
 };
 
 function RegisterNewDogModal(props: RegisterNewDogModalType) {
-  const { show, onClose, registerNewDog } = props;
+  const { show, onClose, registerNewDog, dog, updateCurrentDog } = props;
   const [name, setName] = useState<string>("");
   const [breed, setBreed] = useState<string>("");
   const [owner, setOwner] = useState<string>("");
   const [size, setSize] = useState<string>("XS");
   const [description, setDescription] = useState<string>("");
 
+  // For editing functionality
+  useEffect(() => {
+    function setDogAttributes() {
+      setName(dog!.name);
+      setBreed(dog!.breed);
+      setOwner(dog!.owner);
+      setSize(dog!.size);
+      setDescription(dog!.description);
+    }
+
+    if (dog) {
+      setDogAttributes();
+    }
+  }, [dog]);
+
   function handleOnSubmit(e: any) {
     e.preventDefault();
-    const newDog: DogsType = {
-      name: name,
-      breed: breed,
-      owner: owner,
-      size: size,
-      description: description,
-    };
-    registerNewDog(newDog);
+    // Register new dog for register
+    if (registerNewDog) {
+      const newDog: DogsType = {
+        name: name,
+        breed: breed,
+        owner: owner,
+        size: size,
+        description: description,
+      };
+      registerNewDog(newDog);
+    }
+
+    // Update the dog's profile if updating function is pass
+    if (updateCurrentDog) {
+      const newDog: DogsType = {
+        name: name,
+        breed: breed,
+        owner: owner,
+        size: size,
+        description: description,
+      };
+      updateCurrentDog(newDog);
+    }
+
     handleClose();
   }
 
@@ -58,10 +92,20 @@ function RegisterNewDogModal(props: RegisterNewDogModalType) {
   return (
     <Modal show={show} onClose={handleClose}>
       <div className="register-new-dog-modal__header">
-        <img src={CautiousDogGraphic} alt="Cautious dog" />
-        <h2>Recommend an advisor</h2>
-        <p>We're always looking to add new members to our team!</p>
-        <p>Tell us a bit more about this friend.</p>
+        {dog ? (
+          <>
+            <img src={EditProfileGraphic} alt="Dog loading" />
+            <h2>Meet {dog.name}</h2>
+            <p>Wrong info? Make changes and click the update button below.</p>
+          </>
+        ) : (
+          <>
+            <img src={CautiousDogGraphic} alt="Cautious dog" />
+            <h2>Register an advisor</h2>
+            <p>We're always looking to add new members to our team!</p>
+            <p>Fill out the information below and click register.</p>
+          </>
+        )}
       </div>
 
       <form
@@ -114,7 +158,7 @@ function RegisterNewDogModal(props: RegisterNewDogModalType) {
             "register-new-dog-modal__submit-button--active": !shouldDisableButton(),
           })}
           type="submit"
-          value="RECOMMEND"
+          value={dog ? "Update" : "Register"}
           disabled={shouldDisableButton()}
         />
       </form>

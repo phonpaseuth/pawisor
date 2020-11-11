@@ -14,6 +14,7 @@
   padding: 12px 68px 12px 12px;
   background-color: #eff3f6;
   border: none;
+  font-family: "Raleway", sans-serif;
 }
 
 .search-bar__label-input:focus {

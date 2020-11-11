@@ -1,9 +1,5 @@
 /* Header */
 
-.register-new-dog-modal__header {
-  text-align: center;
-}
-
 .register-new-dog-modal__header img {
   display: block;
   margin: auto;
@@ -34,6 +30,7 @@
 
 .register-new-dog-modal__label span {
   font-size: 12px;
+  font-weight: bold;
 }
 
 .register-new-dog-modal__label input,
@@ -45,6 +42,7 @@
   margin-bottom: 16px;
   padding: 6px 8px;
   border: 0.5px solid#868484;
+  font-family: "Raleway", sans-serif;
 }
 
 .register-new-dog-modal__label input:focus {
@@ -62,14 +60,12 @@
   margin-bottom: 16px;
 }
 
-.register-new-dog-modal__submit-button {
-  margin-top: 32px;
-}
-
 /* Submit Button */
 .register-new-dog-modal__submit-button {
-  width: 100%;
   padding: 8px 12px;
+  margin-top: 32px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 .register-new-dog-modal__submit-button--active {
